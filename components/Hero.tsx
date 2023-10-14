@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function Hero() {
   return (
-    <div className="relative isolate overflow-hidden bg-gradient-to-b from-gray-950 min-h-screen">
+    <div className="bg-black relative isolate overflow-hidden bg-gradient-to-b from-gray-950 min-h-screen">
       <div className="mx-auto max-w-7xl pt-10 sm:pb-32 lg:grid lg:grid-cols-2 lg:gap-x-8 lg:px-0 lg:py-40 items-center grid grid-cols-1 md:grid-cols-2">
         <div className="mt-20 sm:mt-24 md:mx-auto md:max-w-xl lg:mx-0 lg:mt-0 lg:w-screen order-1 md:order-2">
           <div className="shadow-lg md:rounded-3xl">
