@@ -35,7 +35,7 @@ export default function Features() {
   return (
     <div
       id="features"
-      className="bg-gradient-to-b from-gray-950 to-black py-24 sm:pt-32"
+      className="bg-gradient-to-b from-black to-gray-90 py-24 sm:pt-32"
     >
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl lg:text-center">
