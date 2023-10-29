@@ -1,6 +1,6 @@
 import { MdMarkEmailRead } from "react-icons/md";
 async function VerifyEmail(id: string, tempHash: string) {
-  const res = await fetch("http://localhost:5000/auth/verify_email", {
+  const res = await fetch("https://lootpaw.fly.dev/auth/verify_email", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
