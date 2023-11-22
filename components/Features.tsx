@@ -1,35 +1,5 @@
 /* eslint-disable react/no-unescaped-entities */
-import {
-  Battery100Icon,
-  MapPinIcon,
-  ShieldCheckIcon,
-} from "@heroicons/react/20/solid";
-
-const features = [
-  {
-    name: "Long lasting battery",
-    description: `With a battery life that lasts up to 30 days on a single
-    charge, you can rest assured that your pet is safe without the
-    hassle of constant charging.`,
-    href: "#",
-    icon: Battery100Icon,
-  },
-  {
-    name: "LTE and GPS Tracking",
-    description: `We use the latest in LTE and GPS technology to ensure your
-      pets location is known under any circumstance, almost anywhere
-      in the world.`,
-    href: "#",
-    icon: MapPinIcon,
-  },
-  {
-    name: "Waterproof and Durable",
-    description: `Our trackers are IP68 certified. Dust, water, and shock proof.
-      Mud, water, and rough play are no match for our robust design.`,
-    href: "#",
-    icon: ShieldCheckIcon,
-  },
-];
+import { features } from "@/constants";
 
 export default function Features() {
   return (
@@ -53,20 +23,22 @@ export default function Features() {
         </div>
         <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none">
           <dl className="grid max-w-xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-3">
-            {features.map((feature) => (
-              <div key={feature.name} className="flex flex-col">
-                <dt className="flex items-center gap-x-3 text-base font-semibold leading-7 text-white">
-                  <feature.icon
-                    className="h-5 w-5 flex-none text-yellow-400"
-                    aria-hidden="true"
-                  />
-                  {feature.name}
-                </dt>
-                <dd className="mt-4 flex flex-auto flex-col text-base leading-7 text-gray-300">
-                  <p className="flex-auto">{feature.description}</p>
-                </dd>
-              </div>
-            ))}
+            {features
+              .filter((f) => f.frontpage)
+              .map((feature) => (
+                <div key={feature.name} className="flex flex-col">
+                  <dt className="flex items-center gap-x-3 text-base font-semibold leading-7 text-white">
+                    <feature.icon
+                      className="h-5 w-5 flex-none text-yellow-400"
+                      aria-hidden="true"
+                    />
+                    {feature.name}
+                  </dt>
+                  <dd className="mt-4 flex flex-auto flex-col text-base leading-7 text-gray-300">
+                    <p className="flex-auto">{feature.description}</p>
+                  </dd>
+                </div>
+              ))}
           </dl>
         </div>
       </div>
