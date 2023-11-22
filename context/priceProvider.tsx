@@ -44,6 +44,7 @@ export function PriceProvider({ children }: { children: ReactNode }) {
           },
         });
         const data = await res.json();
+        console.log({ data });
         setPriceData(data);
         setLoading(false);
       };
