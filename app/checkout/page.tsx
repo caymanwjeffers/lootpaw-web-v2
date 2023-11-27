@@ -48,8 +48,8 @@ export default function Checkout() {
   };
 
   return (
-    <div className="flex flex-col min-h-screen p-6 pt-20 bg-gray-950">
-      <div id="section-1" className="flex flex-col">
+    <div className="flex flex-col md:flex-row md:gap-x-12 min-h-screen p-6 pt-20 bg-gray-950">
+      <div id="section-1" className="flex flex-col md:w-1/2">
         <div className="mb-6 mt-8 flex flex-col gap-y-2">
           {isLoading ? (
             <Ghost width="3/4" height="10" />
@@ -73,8 +73,8 @@ export default function Checkout() {
         />
       </div>
 
-      <div id="section-2">
-        <div className="flex flex-col gap-y-2 mt-8">
+      <div id="section-2" className="md:flex-1 md:gap-y-auto">
+        <div className="flex flex-col gap-y-2 mt-8 md:mt-32">
           {features.map((feature) => (
             <div key={feature.name} className="flex gap-x-4 w-full ">
               <dt className="flex items-center gap-x-4 text-base font-normal leading-7 text-white">
