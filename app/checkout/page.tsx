@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Ghost } from "@/components/ui/ghost";
 import { features } from "@/constants";
 import { usePrice } from "@/context/priceProvider";
-import { domain } from "@/environment";
+import { domain } from "@/environment/client";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 

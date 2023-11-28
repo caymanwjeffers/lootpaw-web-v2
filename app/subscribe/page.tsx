@@ -1,9 +1,8 @@
 "use client";
 import { Button } from "@/components/ui/button";
-import { Ghost } from "@/components/ui/ghost";
 import { subscriptionFeatures } from "@/constants";
 import { usePrice } from "@/context/priceProvider";
-import { domain } from "@/environment";
+import { domain } from "@/environment/client";
 import { CheckIcon } from "@heroicons/react/20/solid";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
