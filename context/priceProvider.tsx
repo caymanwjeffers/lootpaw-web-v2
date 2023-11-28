@@ -6,7 +6,6 @@ import {
   useEffect,
   useState,
 } from "react";
-import axios from "axios";
 import { domain } from "@/environment/client";
 export interface ISubscriptionPrice {
   name: string;

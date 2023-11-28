@@ -20,19 +20,18 @@ const verify_reset_token = async (id: string, token: string) => {
   } catch (err: any) {
     return {
       error: true,
-      message:
-        "Error verifying reset token. This link may have expired. Please try again.",
+      message: "This link may have expired. Please try again.",
     };
   }
 };
 
-export default async function RootLayout({
+export default async function page({
   params,
 }: {
   params: { id: string; token: string };
 }) {
-  console.log({ params });
-  const data = await verify_reset_token(params.id, params.token);
+  const { id, token } = params;
+  const data = await verify_reset_token(id, token);
   if (data.error) {
     return (
       <main className="h-screen w-full flex flex-col justify-center items-center">
@@ -47,5 +46,5 @@ export default async function RootLayout({
     );
   }
 
-  return <ForgotPasswordForm params={params} />;
+  return <ForgotPasswordForm id={id} token={token} />;
 }
