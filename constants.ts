@@ -43,3 +43,10 @@ export const features = [
     icon: TbBuildingBroadcastTower,
   },
 ];
+
+export const subscriptionFeatures = [
+  "Real time tracking",
+  "Proximity alerts",
+  "Unlimited LTE and GPS coverage",
+  "Historical location and activity data",
+];

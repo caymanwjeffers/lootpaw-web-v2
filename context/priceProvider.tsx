@@ -8,11 +8,13 @@ import {
 } from "react";
 import axios from "axios";
 import { domain } from "@/environment";
-interface ISubscriptionPrice {
+export interface ISubscriptionPrice {
   name: string;
   monthlyPrice: number;
+  interval: "month" | "year";
   productId: string; // called productId because subscriptions are considered products in stripe until they are applied to a customer and become a subscription.
   priceId: string;
+  altDescription: string;
 }
 
 interface IProductPrice {
