@@ -4,7 +4,7 @@ import { subscriptionFeatures } from "@/constants";
 import { usePrice } from "@/context/priceProvider";
 import { domain } from "@/environment/client";
 import { CheckIcon } from "@heroicons/react/20/solid";
-import { useRouter } from "next/navigation";
+import { useParams, useRouter } from "next/navigation";
 import { useState } from "react";
 
 export interface ISubscriptionPrice {
@@ -20,6 +20,8 @@ function classNames(...classes: any[]) {
 }
 
 export default function Subscribe() {
+  const { userId, collarId } = useParams();
+  console.log({ userId, collarId });
   const router = useRouter();
   const [checkoutLoading, setCheckoutLoading] = useState(false);
   const { subscriptions, isLoading: isPriceDataLoading } = usePrice();
@@ -36,6 +38,7 @@ export default function Subscribe() {
         body: JSON.stringify({
           priceId: subscription.priceId,
           productId: subscription.productId,
+          userId,
         }),
       });
       const url = await res.text();
